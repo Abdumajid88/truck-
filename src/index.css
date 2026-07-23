@@ -1,0 +1,81 @@
+:root {
+  --asphalt: #101a23;
+  --asphalt-2: #16232e;
+  --card: #1c2c39;
+  --card-hi: #233746;
+  --line: #2c4356;
+  --off-white: #eef3f6;
+  --steel: #8ba1b3;
+  --amber: #ffb627;
+  --amber-dim: #c98d1a;
+  --rust: #e8543e;
+  --heading-font: 'Oswald', 'Segoe UI', sans-serif;
+  --body-font: 'Inter', 'Segoe UI', sans-serif;
+  --mono-font: 'JetBrains Mono', 'Courier New', monospace;
+  font-family: var(--body-font);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--off-white);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, var(--asphalt), var(--asphalt-2));
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--asphalt), var(--asphalt-2));
+  color: var(--off-white);
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+#root {
+  max-width: 1240px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
