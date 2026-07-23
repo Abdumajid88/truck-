@@ -25,6 +25,13 @@ const services = [
   },
 ]
 
+const wheel = (cx, cy, r = 6) => (
+  <g key={`wheel-${cx}-${cy}`}>
+    <circle cx={cx} cy={cy} r={r} fill="none" stroke="currentColor" strokeWidth="2.5" />
+    <circle cx={cx} cy={cy} r={r * 0.45} fill="currentColor" opacity="0.35" />
+  </g>
+)
+
 const fleet = [
   {
     name: 'Tent',
@@ -32,11 +39,14 @@ const fleet = [
     volume: '20 m³',
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
-        <rect x="8" y="20" width="28" height="18" rx="3" fill="none" stroke="currentColor" strokeWidth="3" />
-        <rect x="36" y="16" width="18" height="22" rx="3" fill="none" stroke="currentColor" strokeWidth="3" />
-        <path d="M8 38h44" stroke="currentColor" strokeWidth="3" />
-        <circle cx="20" cy="42" r="5" fill="currentColor" />
-        <circle cx="42" cy="42" r="5" fill="currentColor" />
+        <rect x="4" y="22" width="30" height="16" rx="2" fill="currentColor" opacity="0.12" stroke="currentColor" strokeWidth="2" />
+        <path d="M8 22 L18 14 L28 22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M10 26h18M10 30h18M10 34h18" stroke="currentColor" strokeWidth="1" opacity="0.45" />
+        <path d="M34 28 L34 38 L48 38 L54 32 L54 24 L44 24 Z" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M48 26 L52 30 L48 32 Z" fill="currentColor" opacity="0.35" />
+        <path d="M4 38h50" stroke="currentColor" strokeWidth="2" opacity="0.5" />
+        {wheel(16, 42)}
+        {wheel(46, 42)}
       </svg>
     ),
   },
@@ -46,12 +56,16 @@ const fleet = [
     volume: '14 m³',
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
-        <rect x="10" y="18" width="28" height="20" rx="3" fill="none" stroke="currentColor" strokeWidth="3" />
-        <rect x="38" y="12" width="16" height="28" rx="3" fill="none" stroke="currentColor" strokeWidth="3" />
-        <path d="M16 22h14" stroke="currentColor" strokeWidth="3" />
-        <path d="M18 30h10" stroke="currentColor" strokeWidth="3" />
-        <circle cx="22" cy="42" r="5" fill="currentColor" />
-        <circle cx="42" cy="42" r="5" fill="currentColor" />
+        <rect x="4" y="20" width="30" height="18" rx="2" fill="currentColor" opacity="0.12" stroke="currentColor" strokeWidth="2" />
+        <rect x="8" y="24" width="8" height="10" rx="1" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M10 28h4M10 31h4" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+        <path d="M34 26 L34 38 L50 38 L56 32 L56 22 L42 22 Z" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M50 24 L54 28 L50 30 Z" fill="currentColor" opacity="0.35" />
+        <circle cx="20" cy="14" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M20 11v6M17 14h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M4 38h52" stroke="currentColor" strokeWidth="2" opacity="0.5" />
+        {wheel(16, 42)}
+        {wheel(48, 42)}
       </svg>
     ),
   },
@@ -61,10 +75,13 @@ const fleet = [
     volume: '28 m³',
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
-        <rect x="8" y="20" width="42" height="16" rx="3" fill="none" stroke="currentColor" strokeWidth="3" />
-        <path d="M10 36h40" stroke="currentColor" strokeWidth="3" />
-        <circle cx="20" cy="42" r="5" fill="currentColor" />
-        <circle cx="40" cy="42" r="5" fill="currentColor" />
+        <rect x="4" y="28" width="38" height="4" rx="1" fill="currentColor" opacity="0.25" />
+        <path d="M8 32h34M12 24v8M24 22v10M36 24v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M42 26 L42 38 L54 38 L58 34 L58 24 L48 24 Z" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M52 26 L56 30 L52 32 Z" fill="currentColor" opacity="0.35" />
+        <path d="M4 38h54" stroke="currentColor" strokeWidth="2" opacity="0.5" />
+        {wheel(18, 42)}
+        {wheel(50, 42)}
       </svg>
     ),
   },
@@ -74,15 +91,26 @@ const fleet = [
     volume: '35 m³',
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
-        <rect x="10" y="18" width="34" height="18" rx="3" fill="none" stroke="currentColor" strokeWidth="3" />
-        <rect x="44" y="14" width="10" height="24" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
-        <path d="M14 36h30" stroke="currentColor" strokeWidth="3" />
-        <circle cx="22" cy="42" r="5" fill="currentColor" />
-        <circle cx="42" cy="42" r="5" fill="currentColor" />
+        <rect x="2" y="18" width="36" height="20" rx="2" fill="currentColor" opacity="0.12" stroke="currentColor" strokeWidth="2" />
+        <path d="M6 22h28M6 26h28M6 30h28M6 34h28" stroke="currentColor" strokeWidth="1" opacity="0.4" />
+        <rect x="38" y="22" width="18" height="16" rx="2" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="2" />
+        <path d="M52 24 L56 28 L52 30 Z" fill="currentColor" opacity="0.35" />
+        <path d="M2 38h54" stroke="currentColor" strokeWidth="2" opacity="0.5" />
+        {wheel(14, 42)}
+        {wheel(30, 42)}
+        {wheel(50, 42)}
       </svg>
     ),
   },
 ]
+
+const truckWheel = (cx, cy, r = 13) => (
+  <g key={`truck-wheel-${cx}`}>
+    <circle cx={cx} cy={cy} r={r} fill="none" stroke="currentColor" strokeWidth="3" />
+    <circle cx={cx} cy={cy} r={r * 0.38} fill="currentColor" opacity="0.3" />
+    <circle cx={cx} cy={cy} r={2.5} fill="currentColor" />
+  </g>
+)
 
 const trucks = [
   {
@@ -91,11 +119,16 @@ const trucks = [
     mileage: '420 000 km',
     image: (
       <svg viewBox="0 0 180 110" aria-hidden="true">
-        <rect x="16" y="34" width="86" height="40" rx="8" fill="none" stroke="currentColor" strokeWidth="4" />
-        <rect x="102" y="24" width="46" height="48" rx="6" fill="none" stroke="currentColor" strokeWidth="4" />
-        <path d="M20 74h120" stroke="currentColor" strokeWidth="4" />
-        <circle cx="48" cy="84" r="14" fill="none" stroke="currentColor" strokeWidth="4" />
-        <circle cx="122" cy="84" r="14" fill="none" stroke="currentColor" strokeWidth="4" />
+        <ellipse cx="90" cy="98" rx="72" ry="4" fill="currentColor" opacity="0.12" />
+        <rect x="12" y="38" width="78" height="36" rx="4" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="2.5" />
+        <path d="M16 38 L28 28 L72 28 L84 38" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M22 44h58M22 52h58M22 60h58" stroke="currentColor" strokeWidth="1" opacity="0.35" />
+        <path d="M90 42 L90 74 L118 74 L138 58 L138 36 L108 36 Z" fill="currentColor" opacity="0.08" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M118 40 L134 52 L118 56 Z" fill="currentColor" opacity="0.35" />
+        <rect x="132" y="52" width="6" height="14" rx="1" fill="currentColor" opacity="0.45" />
+        <path d="M10 74h158" stroke="currentColor" strokeWidth="2" opacity="0.4" />
+        {truckWheel(44, 82)}
+        {truckWheel(118, 82)}
       </svg>
     ),
     perks: ['GPS kuzatuv', 'Konditsioner', 'Sug‘urta'],
@@ -106,11 +139,17 @@ const trucks = [
     mileage: '310 000 km',
     image: (
       <svg viewBox="0 0 180 110" aria-hidden="true">
-        <rect x="10" y="34" width="92" height="38" rx="8" fill="none" stroke="currentColor" strokeWidth="4" />
-        <rect x="105" y="24" width="50" height="46" rx="6" fill="none" stroke="currentColor" strokeWidth="4" />
-        <path d="M14 72h128" stroke="currentColor" strokeWidth="4" />
-        <circle cx="48" cy="84" r="14" fill="none" stroke="currentColor" strokeWidth="4" />
-        <circle cx="128" cy="84" r="14" fill="none" stroke="currentColor" strokeWidth="4" />
+        <ellipse cx="90" cy="98" rx="76" ry="4" fill="currentColor" opacity="0.12" />
+        <rect x="8" y="36" width="88" height="38" rx="3" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="2.5" />
+        <path d="M12 40h80M12 48h80M12 56h80M12 64h80" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+        <path d="M96 38 L96 74 L128 74 L156 56 L156 30 L118 30 Z" fill="currentColor" opacity="0.08" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M128 34 L152 50 L128 54 Z" fill="currentColor" opacity="0.35" />
+        <path d="M148 48v18M152 48v18M156 48v18" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
+        <path d="M100 22 L108 30 L118 30" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M6 74h164" stroke="currentColor" strokeWidth="2" opacity="0.4" />
+        {truckWheel(38, 82)}
+        {truckWheel(72, 82)}
+        {truckWheel(132, 82)}
       </svg>
     ),
     perks: ['Yengil yuk', '24/7 monitoring', 'Bojxona hujjat'],
@@ -121,11 +160,18 @@ const trucks = [
     mileage: '260 000 km',
     image: (
       <svg viewBox="0 0 180 110" aria-hidden="true">
-        <rect x="14" y="32" width="92" height="40" rx="8" fill="none" stroke="currentColor" strokeWidth="4" />
-        <rect x="108" y="24" width="44" height="48" rx="6" fill="none" stroke="currentColor" strokeWidth="4" />
-        <path d="M18 72h126" stroke="currentColor" strokeWidth="4" />
-        <circle cx="50" cy="84" r="14" fill="none" stroke="currentColor" strokeWidth="4" />
-        <circle cx="126" cy="84" r="14" fill="none" stroke="currentColor" strokeWidth="4" />
+        <ellipse cx="90" cy="98" rx="74" ry="4" fill="currentColor" opacity="0.12" />
+        <rect x="10" y="34" width="86" height="40" rx="3" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="2.5" />
+        <rect x="14" y="38" width="78" height="14" rx="2" fill="currentColor" opacity="0.08" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M96 36 Q96 28 118 28 L148 28 Q160 28 160 40 L160 74 L128 74 L96 58 Z" fill="currentColor" opacity="0.08" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M132 32 L156 46 L132 50 Z" fill="currentColor" opacity="0.35" />
+        <path d="M152 50v16M156 50v16" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
+        <circle cx="22" cy="44" r="3" fill="currentColor" opacity="0.4" />
+        <circle cx="34" cy="44" r="3" fill="currentColor" opacity="0.4" />
+        <path d="M8 74h160" stroke="currentColor" strokeWidth="2" opacity="0.4" />
+        {truckWheel(40, 82)}
+        {truckWheel(74, 82)}
+        {truckWheel(136, 82)}
       </svg>
     ),
     perks: ['Refrijerator', 'Dvigatel garantiya', 'Sug‘urta'],
@@ -136,11 +182,18 @@ const trucks = [
     mileage: '290 000 km',
     image: (
       <svg viewBox="0 0 180 110" aria-hidden="true">
-        <rect x="12" y="34" width="94" height="38" rx="8" fill="none" stroke="currentColor" strokeWidth="4" />
-        <rect x="106" y="24" width="48" height="46" rx="6" fill="none" stroke="currentColor" strokeWidth="4" />
-        <path d="M18 72h124" stroke="currentColor" strokeWidth="4" />
-        <circle cx="48" cy="84" r="14" fill="none" stroke="currentColor" strokeWidth="4" />
-        <circle cx="126" cy="84" r="14" fill="none" stroke="currentColor" strokeWidth="4" />
+        <ellipse cx="90" cy="98" rx="75" ry="4" fill="currentColor" opacity="0.12" />
+        <rect x="10" y="36" width="90" height="38" rx="3" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="2.5" />
+        <path d="M14 42h82M14 50h82M14 58h82" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+        <path d="M100 38 L100 74 L132 74 L158 58 L158 32 L122 32 Z" fill="currentColor" opacity="0.08" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M132 36 L154 50 L132 54 Z" fill="currentColor" opacity="0.35" />
+        <rect x="150" y="48" width="8" height="16" rx="1" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M152 52h4M152 56h4M152 60h4" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+        <path d="M104 24 L112 32 L124 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M8 74h162" stroke="currentColor" strokeWidth="2" opacity="0.4" />
+        {truckWheel(42, 82)}
+        {truckWheel(76, 82)}
+        {truckWheel(134, 82)}
       </svg>
     ),
     perks: ['Konditsioner', 'GPS', 'Yuk xavfsizligi'],
@@ -237,6 +290,15 @@ function App() {
   const [truckStatus, setTruckStatus] = useState('')
   const [truckPreview, setTruckPreview] = useState('')
   const [truckImageName, setTruckImageName] = useState('')
+  const [reduceMotion, setReduceMotion] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReduceMotion(mediaQuery.matches)
+    const onChange = (event) => setReduceMotion(event.matches)
+    mediaQuery.addEventListener('change', onChange)
+    return () => mediaQuery.removeEventListener('change', onChange)
+  }, [])
 
   const estimate = useMemo(() => {
     const rate = vehicleRates[vehicle]
@@ -375,24 +437,45 @@ function App() {
           <div className="route-card hero-fade" style={{ '--hero-delay': '760ms' }} aria-label="Marshrut paneli">
             <div className="route-labels">
               <span>Toshkent</span>
+              <span>Buxoro</span>
               <span>Samarkand</span>
             </div>
             <div className="route-graphic">
-              <svg viewBox="0 0 420 140" role="img" aria-label="Yuk mashinasi marshruti">
-                <path d="M20 80 C70 30, 120 30, 180 80 S300 130, 400 60" stroke="rgba(255,182,39,0.5)" strokeWidth="4" strokeDasharray="8 8" fill="none" />
+              <svg viewBox="0 0 420 140" className="route-map" role="img" aria-label="Yuk mashinasi marshruti">
+                <defs>
+                  <path id="hero-route" d="M20 80 C70 30, 120 30, 180 80 S300 130, 400 60" />
+                </defs>
+                <path
+                  d="M20 80 C70 30, 120 30, 180 80 S300 130, 400 60"
+                  stroke="rgba(255,182,39,0.45)"
+                  strokeWidth="3"
+                  strokeDasharray="8 6"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+                <circle cx="20" cy="80" r="4" fill="#ffb627" opacity="0.5" />
                 <circle cx="60" cy="68" r="6" fill="#ffb627" />
                 <circle cx="236" cy="92" r="6" fill="#ffb627" />
                 <circle cx="360" cy="60" r="6" fill="#ffb627" />
+                <circle cx="400" cy="60" r="4" fill="#ffb627" opacity="0.5" />
+                <g className="hero-truck" stroke="#ffb627" fill="#ffb627" transform={reduceMotion ? 'translate(60 68)' : undefined}>
+                  {!reduceMotion ? (
+                    <animateMotion dur="6s" repeatCount="indefinite" rotate="auto" calcMode="linear">
+                      <mpath href="#hero-route" />
+                    </animateMotion>
+                  ) : null}
+                  <g transform="translate(-22 -16)">
+                    <rect x="0" y="8" width="22" height="11" rx="2" fill="#ffb627" fillOpacity="0.15" stroke="#ffb627" strokeWidth="1.5" />
+                    <path d="M1 8 L7 3 L19 3 L22 8" fill="none" stroke="#ffb627" strokeWidth="1.2" strokeLinejoin="round" />
+                    <path d="M22 10 L22 19 L32 19 L38 14 L38 6 L28 6 Z" fill="#ffb627" fillOpacity="0.12" stroke="#ffb627" strokeWidth="1.5" strokeLinejoin="round" />
+                    <path d="M32 8 L36 11 L32 12 Z" fill="#ffb627" fillOpacity="0.45" stroke="none" />
+                    <circle cx="9" cy="21" r="4" fill="none" stroke="#ffb627" strokeWidth="1.5" />
+                    <circle cx="9" cy="21" r="1.5" fill="#ffb627" stroke="none" />
+                    <circle cx="32" cy="21" r="4" fill="none" stroke="#ffb627" strokeWidth="1.5" />
+                    <circle cx="32" cy="21" r="1.5" fill="#ffb627" stroke="none" />
+                  </g>
+                </g>
               </svg>
-              <div className="truck-icon" aria-hidden="true">
-                <svg viewBox="0 0 64 64">
-                  <rect x="6" y="20" width="24" height="16" rx="3" fill="none" stroke="currentColor" strokeWidth="3" />
-                  <rect x="30" y="15" width="16" height="21" rx="2" fill="none" stroke="currentColor" strokeWidth="3" />
-                  <path d="M6 36h44" stroke="currentColor" strokeWidth="3" />
-                  <circle cx="18" cy="42" r="5" fill="currentColor" />
-                  <circle cx="40" cy="42" r="5" fill="currentColor" />
-                </svg>
-              </div>
             </div>
             <div className="route-foot">
               <span>Harakat tezligi: 72 km/soat</span>

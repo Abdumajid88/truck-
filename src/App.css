@@ -106,10 +106,14 @@
 
 .hero-section {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 32px;
   align-items: center;
   padding: 56px 0 24px;
+}
+
+.hero-copy {
+  min-width: 0;
 }
 
 .eyebrow {
@@ -223,45 +227,41 @@
   border-radius: 24px;
   background: linear-gradient(145deg, rgba(28, 44, 57, 0.95), rgba(16, 26, 35, 0.98));
   border: 1px solid var(--line);
+  align-self: center;
+  width: 100%;
 }
 
 .route-labels {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
   color: var(--steel);
-  font-size: 0.9rem;
-  margin-bottom: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.route-labels span:first-child {
+  text-align: left;
+}
+
+.route-labels span:last-child {
+  text-align: right;
 }
 
 .route-graphic {
   position: relative;
-  min-height: 180px;
+  aspect-ratio: 3 / 1;
+  min-height: 160px;
   border-radius: 18px;
-  background: radial-gradient(circle at top, rgba(255, 182, 39, 0.14), transparent 60%);
-  overflow: hidden;
+  background: radial-gradient(circle at 50% 20%, rgba(255, 182, 39, 0.16), transparent 65%);
+  overflow: visible;
 }
 
-.route-graphic svg {
+.route-map {
   width: 100%;
   height: 100%;
-}
-
-.truck-icon {
-  position: absolute;
-  top: 44px;
-  left: -35px;
-  width: 64px;
-  height: 64px;
-  color: var(--amber);
-  animation: routeDrive 5s linear infinite;
-}
-
-@keyframes routeDrive {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(110px, -18px); }
-  50% { transform: translate(220px, 14px); }
-  75% { transform: translate(320px, -6px); }
-  100% { transform: translate(420px, 0); }
+  display: block;
 }
 
 @keyframes heroFadeUp {
@@ -369,6 +369,22 @@
   background: rgba(255, 182, 39, 0.14);
   color: var(--amber);
   font-size: 1.4rem;
+}
+
+.fleet-icon svg,
+.vehicle-visual svg {
+  width: 100%;
+  height: 100%;
+}
+
+.vehicle-visual svg {
+  max-width: 168px;
+  max-height: 110px;
+}
+
+.fleet-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .calculator-panel {
@@ -729,7 +745,6 @@ button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .truck-icon,
   .hero-copy .hero-fade,
   .reveal {
     animation: none;
